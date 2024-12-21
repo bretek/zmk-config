@@ -69,13 +69,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  +       │  7       │  8       │  9       │  *       │   │  TAB     │  HOME    │  BKSP    │  DEL     │  END     │
-            &kp PLUS   &kp KP_N7  &kp KP_N8 &kp KP_N9   &kp STAR      &kp TAB    &kp HOME   &kp BSPC   &kp DEL    &kp END
+            &kp PLUS   &kp    N7  &kp    N8 &kp    N9   &kp STAR      &kp TAB    &kp HOME   &kp BSPC   &kp DEL    &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  -       │  4       │  5       │  6       │  /       │   │  ENTER   │  LEFT    │  DOWN    │  UP      │  RIGHT   │
-            &kp MINUS  &kp KP_N4 &kp KP_N5  &kp KP_N6   &kp FSLH      &kp ENTER  &kp LEFT   &kp DOWN  &kp UP      &kp RIGHT
+            &kp MINUS  &kp    N4 &kp    N5  &kp    N6   &kp FSLH      &kp ENTER  &kp LEFT   &kp DOWN  &kp UP      &kp RIGHT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │ 1        │ 2        │ 3        │ 0        │   │  ESC     │          │          │          │          │
-            &trans     &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0      &kp ESC    &trans     &trans      &trans    &trans
+            &trans     &kp    N1  &kp    N2  &kp    N3  &kp    N0      &kp ESC    &trans     &trans      &trans    &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
