@@ -52,7 +52,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ [        │  ]       │  {       │  }       │ ^        │   │ |        │ '        │ $        │ #        │          │
-            &kp LBKT   &kp RBKT   &kp LBRC   &kp RBRC   &kp CARET      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &trans
+            &kp LBKT   &kp RBKT   &kp LBRC   &kp RBRC   &kp CARET      &kp PIPE   &kp APOS  &kp DLLR    &kp HASH    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ !        │  =       │  (       │  )       │ /        │   │ \        │ "        │  _       │          │          │
             &kp EXCL  &kp EQUAL  &kp LPAR    &kp RPAR   &kp FSLH       &kp BSLH   &kp DQT   &kp UNDER    &trans     &trans
