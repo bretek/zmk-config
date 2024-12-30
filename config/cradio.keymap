@@ -10,6 +10,13 @@
 #define HRML(k1,k2,k3,k4) &lht LALT k1  &ht LGUI k2   &ht LCTRL k3 &sht LSHFT k4  
 #define HRMR(k1,k2,k3,k4) &sht RSHFT k1  &ht RCTRL k2  &ht RGUI k3  &lht RALT k4
 
+#define DEFAULT 0
+#define COLEMAK 1
+#define SYM 2
+#define NUM 3
+#define TRI 4
+#define MOUSE 5
+
 / {
     behaviors {
         sht: short_hold_tap {
@@ -40,8 +47,8 @@
         conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
-                if-layers = <1 2>;
-                then-layer = <3>;
+                if-layers = <SYM NUM>;
+                then-layer = <TRI>;
             };
         };
     };
@@ -60,7 +67,24 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &mo 4       &kp SPACE     &mo 2      &mo 1
+                                            &mo MOUSE   &kp SPACE     &mo NUM     &mo SYM
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        colemak_layer { // for older windows machines without colemak keyboard option
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  ; :     │
+            &kp Q      &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  R       │  S       │  T       │  D       │   │  H       │  N       │  E       │  I       │ O        │
+            HRML(A,       R,        S,          T)      &kp D          &kp H      HRMR(N,        E,         I,       O)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │ , <      │ . >      │ / ?      │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                            &mo MOUSE   &kp SPACE     &mo NUM     &mo SYM
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -109,7 +133,7 @@
           &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
+            &tog COLEMAK &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
