@@ -61,6 +61,12 @@
             key-positions = <20 29>;
             bindings = <&caps_word>;
         };
+
+        combo_caps_lock {
+            timeout-ms = <50>;
+            key-positions = <24 25>;
+            bindings = <&kp CAPS>;
+        };
     };
 
     keymap {
